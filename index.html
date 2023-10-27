@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emazet Store</title>
+    <h3>Can Use For : </h3>
+    <h4>- Guest Format</h4>
+    <h4>- Email Format</h4>
+    <br>
+    <h>Example : </h>
+    <br>
+    <h>2e:1c:91:6f:00:68|D081C412FD40E90168B9C8D4C5EF0EBB</h>
+    <br>
+    <h>9d:10:26:be:54:40|8242339DBF68FA11592597F842D8C47C</h>
+    <br>
+    <h>f0:a2:43:ba:fa:4f|41B9771E3109CC209571D3EE421C6188</h>
+    <h><br></h>
+    <br>
+    <h>Result : </h>
+    <br>
+    <h>"2e:1c:91:6f:00:68|D081C412FD40E90168B9C8D4C5EF0EBB",</h>
+    <br>
+    <h>"9d:10:26:be:54:40|8242339DBF68FA11592597F842D8C47C",</h>
+    <br>
+    <h>"f0:a2:43:ba:fa:4f|41B9771E3109CC209571D3EE421C6188",</h>
+    <script>
+        function convertText() {
+            var inputText = document.getElementById("inputText").value;
+            var lines = inputText.split('\n');
+            var outputText = "";
+
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                if (line !== "") {
+                    outputText += '"' + line + '",\n';
+                }
+            }
+
+            document.getElementById("outputText").value = outputText;
+        }
+    </script>
+</head>
+<body>
+    <h1>Converter By Emazet Store</h1>
+    <textarea id="inputText" rows="5" cols="50"></textarea><br><br>
+    <button onclick="convertText()">Convert</button><br><br>
+    <textarea id="outputText" rows="5" cols="50"></textarea>
+</body>
+</html>
